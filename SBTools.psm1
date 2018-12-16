@@ -699,7 +699,7 @@ function Test-SBDisk {
     Set-Location $WorkFolder 
     $logfile = $WorkFolder + "\Test-SBDisk_" + $env:COMPUTERNAME + (Get-Date -format yyyyMMdd_hhmmsstt) + ".txt"
     $WorkSubFolder = $WorkFolder + "\" + [string](Get-Random -Minimum 100000000 -Maximum 999999999) # Random name for work session subfolder
-    $CSV = "$WorkFolder \Test-SBDisk_" + $env:COMPUTERNAME + (Get-Date -format yyyyMMdd_hhmmsstt) + ".csv"
+    $CSV = "$WorkFolder\Test-SBDisk_" + $env:COMPUTERNAME + (Get-Date -format yyyyMMdd_hhmmsstt) + ".csv"
     if ( -not (Test-Path $CSV)) {
         write-output ("Cycle #,Duration (sec),Files (GB),# of Files,Avg. File (MB),Throughput (MB/s),IOPS (K) (" + '{0:N0}' -f ($BlockSize/1KB) + "KB blocks),Machine Name,Start Time,End Time") | 
             out-file -Filepath $CSV -append -encoding ASCII
